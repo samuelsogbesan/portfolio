@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Project/static/css/main.decb33a0.chunk.css",
+    "main.css": "/Project/static/css/main.b23f068f.chunk.css",
     "main.js": "/Project/static/js/main.13f4f65f.chunk.js",
     "main.js.map": "/Project/static/js/main.13f4f65f.chunk.js.map",
     "runtime-main.js": "/Project/static/js/runtime-main.04e53f3f.js",
@@ -8,9 +8,9 @@
     "static/js/2.c96bc2a0.chunk.js": "/Project/static/js/2.c96bc2a0.chunk.js",
     "static/js/2.c96bc2a0.chunk.js.map": "/Project/static/js/2.c96bc2a0.chunk.js.map",
     "index.html": "/Project/index.html",
-    "precache-manifest.5600bda39c7f621d66bc0d72d7f9eb58.js": "/Project/precache-manifest.5600bda39c7f621d66bc0d72d7f9eb58.js",
+    "precache-manifest.536d90952b9c2dc68e07009873c3731f.js": "/Project/precache-manifest.536d90952b9c2dc68e07009873c3731f.js",
     "service-worker.js": "/Project/service-worker.js",
-    "static/css/main.decb33a0.chunk.css.map": "/Project/static/css/main.decb33a0.chunk.css.map",
+    "static/css/main.b23f068f.chunk.css.map": "/Project/static/css/main.b23f068f.chunk.css.map",
     "static/js/2.c96bc2a0.chunk.js.LICENSE.txt": "/Project/static/js/2.c96bc2a0.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Project/static/media/BalooPaaji2-Regular.9b538d73.ttf",
     "static/media/cv.pdf": "/Project/static/media/cv.b98587ef.pdf",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.04e53f3f.js",
     "static/js/2.c96bc2a0.chunk.js",
-    "static/css/main.decb33a0.chunk.css",
+    "static/css/main.b23f068f.chunk.css",
     "static/js/main.13f4f65f.chunk.js"
   ]
 }
