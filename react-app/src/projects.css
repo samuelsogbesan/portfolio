@@ -28,10 +28,6 @@
 
 .grid-element-container{    
     min-width: var(--size);
-    min-height: var(--size);
-    max-width: var(--size);
-    max-height: var(--size);
-    width: var(--size);
     height: var(--size);
 
     /*
@@ -65,6 +61,7 @@
     color:white;
     justify-content:center;
     transition: all 400ms ease;
+    padding:2px;
 }
 
 
@@ -98,7 +95,8 @@
 
 .info-container .name{
     color:white;
-    text-decoration: underline;
+
+    /*text-decoration: underline;*/
 }
 
 .info-container .description{
@@ -121,6 +119,9 @@
 }
 
 @media screen and (max-width: 600px){
+    .grid-element-container{
+        min-width: 100%;
+    }
     .grid-element{
         /*padding-top:calc(var(--size)/2 - 1.5rem) ; /* size/2 -fontsize*/
         border-radius: 0;
@@ -143,6 +144,8 @@
         gap:1rem;
         grid-template-columns: repeat(auto-fit,minmax(var(--size),100vw));   
         */
-        width: calc(var(--size));
+        --size:15rem;
+        width: var(---size);
+        /*width: calc(var(--size)-1em);*/
     }
 }

@@ -112,7 +112,8 @@ export default class Projects extends BaseComponent {
 
     scroll(dir){
         var el = document.getElementById("grid-container");
-        el.scrollBy(dir * (16*15),0);
+        var scrollDist = document.querySelector(".grid-container").clientWidth;
+        el.scrollBy(dir * scrollDist,0);
     }
     render() {
         if (this.state.ready !== true) return <LoadingIndicator />;
