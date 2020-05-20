@@ -1,0 +1,22 @@
+@keyframes float{
+    0%{margin-top:initial}
+    50%{margin-top:5px}
+    100%{margin-top:initial}
+}
+.toast{    
+    transition: all 500ms ease ease-in-out;
+    position: absolute;
+    color:white;
+    font-size:1.5rem;
+    width: 100%;
+    text-align: center;
+    top:0;
+    padding:1rem 0;    
+    animation:fadein 500ms ease-in-out, float 1s ease-in-out infinite;    
+    color:var(--seventh);
+}
+
+.hidden{
+    animation:fadeout 500ms ease-in-out;
+    opacity: 0;
+}

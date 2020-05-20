@@ -1,0 +1,34 @@
+.cv-container {
+  color: black;
+  text-align: center;
+  flex: 0.7;
+
+  display: flex;
+  flex-direction: row;
+  animation: fadein 500ms ease;
+  border-top: 1px rgb(182, 182, 182) solid;
+  transition:border 1000ms ease;
+  transition-delay: 200ms;
+}
+
+.cv-nav {
+  border-right: 1px rgb(182, 182, 182) solid;
+  flex: 0.2;
+}
+
+.cv-nav ul {
+    height: 100%;
+    width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cv-content {
+  flex: 0.8;
+}

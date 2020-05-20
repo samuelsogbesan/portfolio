@@ -1,0 +1,110 @@
+.project-container{
+    position: absolute;
+    z-index: 3;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    transition: 200 ease;
+    animation: fadein 0.5s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /*padding:0 1rem;*/
+    background-color: #9696969d;
+    animation: fadein 0.5s ease;
+
+    /*experimetnal*/
+    top:0;
+    height: 100%;
+    width: 100%;
+    
+    
+}
+
+.project-image{
+    
+    flex:0.3;
+
+    
+    border-radius: 0.8rem;
+    text-align: center;
+    
+}
+
+.project-info{
+    font-size: 1.25rem;
+    flex:0.3;
+    color:var(--backgroundcolor);
+    color: var(--secondary);
+    
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+    justify-content: space-around;    
+
+    background-color: white;
+    border-radius: 1rem;
+    padding:1rem;
+}
+
+.project-info .name{
+    color:var(--secondary);
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 2rem;
+    text-decoration: underline var(--fontcolor);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.project-info .date{
+    color:var(--primary);
+    font-size: 1.25rem;
+    font-style: italic;
+    border-bottom: 0.25rem solid var(--secondary);
+}
+
+.project-info .description{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.project-info .link{
+    color: var(--fontcolor) !important;
+    
+    /*filter:grayscale(100%) hue-rotate(90deg);*/
+}
+.controller{
+    border-radius: 3rem;
+    width: 3rem;
+    height: 3rem;
+    border:none;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+    user-select: none;
+}
+
+.controller:hover{
+    filter:hue-rotate(30deg);
+}
+
+@media screen and (max-width: 600px){
+
+    .project-container{
+        flex-direction: column;
+    }
+}

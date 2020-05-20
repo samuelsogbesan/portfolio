@@ -1,0 +1,148 @@
+
+@keyframes jump-2{
+    0%{transform:initial} /*0s*/
+    25%{transform:initial} /*2ss*/
+    100%{transform:rotateZ(360deg)}
+}
+
+.grid-container{
+    --size:15rem;
+    color:black;
+    display: flex;    
+    /*flex:1;*/
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin:0.1rem 0;
+    width: calc(var(--size) * 3);
+    flex-wrap:nowrap;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    scroll-behavior: smooth;    
+    margin: 0 0.5rem;
+    
+    border:0.4rem white solid;
+    border-radius: 1rem;
+    /*box-shadow: 0.25rem 0.25rem 0.45rem -0.2rem white;*/
+}
+
+.grid-element-container{    
+    min-width: var(--size);
+    min-height: var(--size);
+    max-width: var(--size);
+    max-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+
+    /*
+    border-width: 0.4rem;
+    border-style: groove;*/
+}
+
+.grid-element{
+    /*--pad:calc(var(--size)/2 - 1.5rem);*/
+    transition: all 300ms ease-in;
+    text-align: center;
+    background-color: var(--quaternary);
+    /*border-radius: 1rem;*/
+    /*border-style: groove;*/
+    cursor: pointer;
+    filter: grayscale(0%);
+    font-size: 1.25rem;
+    /*box-shadow: 10px 10px 15px -3px var(--sixth);*/
+    text-transform: uppercase;
+    background-size: cover;
+    user-select: none;
+    height: var(--size);
+    /*animation-name: fadein jump;
+    animation: jump 1s ease-in-out infinite !important;*/
+    /*animation: fadein 500ms ease;*/
+    transform: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    justify-content:center;
+    transition: all 400ms ease;
+}
+
+
+.grid-element-container:hover{
+    transform: rotate3d(0,1,0,180deg);
+}
+
+.grid-element-container:hover .info-container{
+    color:white;
+}
+
+.grid-element-prompt{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1rem;
+    top:50%;
+    left:50%;
+    right:50%;
+    display: block;
+    color:white;
+    transform: rotate(90deg);
+    opacity: 1;
+    animation: jump-2 1s ease-in-out infinite;
+}
+
+.info-container{
+    transition: inherit;
+    color:transparent;
+}
+
+.info-container .name{
+    color:white;
+    text-decoration: underline;
+}
+
+.info-container .description{
+    font-size: 0.9rem !important;
+}
+
+/*
+.grid-element:first-child:hover{
+    animation-play-state: paused !important;
+}*/
+
+@media screen and (min-width: 600px){
+.grid-element.wide{
+    grid-column: span 2 / auto;
+}
+
+.grid-element.tall{
+    grid-row: span 2 / auto;
+}
+}
+
+@media screen and (max-width: 600px){
+    .grid-element{
+        /*padding-top:calc(var(--size)/2 - 1.5rem) ; /* size/2 -fontsize*/
+        border-radius: 0;
+        border-left:none;
+        border-right:none;
+        color:white;
+    }
+    .grid-element-prompt{
+        top:70%;       
+        display:none;
+    }
+    .grid-element-container:hover > .grid-element,.grid-element-name{    
+        transform: rotate3d(0,1,0,1deg);
+    }
+    .grid-container{
+        /*--size:15rem;*/
+        color:black;
+        /*
+        display: grid;
+        gap:1rem;
+        grid-template-columns: repeat(auto-fit,minmax(var(--size),100vw));   
+        */
+        width: calc(var(--size));
+    }
+}
