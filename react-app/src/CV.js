@@ -12,7 +12,7 @@ export default class CV extends React.Component {
         return (
             <div>
                 <Toast message={"Opened CV in new window!"} />
-                <a style={{position:"absolute",display:"none"}}target="blank_" id="cv-download" href={file} />
+                <a style={{position:"absolute",display:"none"}}target="blank_" id="cv-download" href={file} >.</a>
             </div>
         )
     }
