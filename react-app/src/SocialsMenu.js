@@ -4,7 +4,7 @@ import email from "./Resources/Images/email.svg";
 import linkedin from "./Resources/Images/social-network-icons/svg/linkedin.svg";
 import github from "./Resources/Images/social-network-icons/svg/github.svg";
 //import phone from "./Resources/Images/phone.svg";
-import "./menu.css";
+import "./menu-style.css";
 export default class SocialsMenu extends React.Component{
     render(){
         var options = [

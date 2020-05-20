@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import homeicon from "./Resources/Images/home-icon.svg";
 import project from "./Resources/Images/rocket.svg";
 import cv from "./Resources/Images/cv.svg";
-import "./menu.css";
+import "./menu-style.css";
 
 class Brand extends React.Component {
     render() {
