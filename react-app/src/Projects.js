@@ -117,11 +117,7 @@ export default class Projects extends BaseComponent {
     }
     render() {
         if (this.state.ready !== true) return <LoadingIndicator />;
-
-        //var proj = this.state.projects[this.state.activeProjectIndex];
         var projects = [];
-
-        //colours.splice(Math.round(Math.random() * (colours.length-1)),1)[0]
 
         for (var i = 0; i < this.state.projects.length; i++) projects.push(<GridElement {...this.state.projects[i]} key={i} index={i} onClick={this.setProject} />)
         return (
