@@ -1,0 +1,22 @@
+.arrow-container{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.arrow{
+    width: 2rem;
+    color:white;
+    filter:invert(1);
+}
+
+.arrow-container:first-child{
+    background-color: green;
+    align-self: flex-start;
+}
+.arrow-container:first-child .arrow{
+    transform: rotateZ(0);
+    filter:none;
+}

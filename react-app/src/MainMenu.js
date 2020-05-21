@@ -6,7 +6,7 @@ import homeicon from "./Resources/Images/home-icon.svg";
 import project from "./Resources/Images/rocket.svg";
 import cv from "./Resources/Images/cv.svg";
 import "./menu-style.css";
-
+import arrow from "./Resources/Images/arrow.svg";
 class Brand extends React.Component {
     render() {
         return (
@@ -70,12 +70,32 @@ export default class Menu extends React.Component {
             <nav className={className}>
                 <Brand />
                 {MenuList({className:"menu-list",options:options})}
+                <Arrow text="navigate" orientation="0deg" lead="caption"/>
             </nav>
         )
     }
 }
 
+class Arrow extends React.Component{
+    render(){
+        var arrowOrder = this.props.lead==="arrow" ? 0 : 1;
+        var captionOrder = 1-arrowOrder;
+        var captionJustification = this.props.lead==="caption" ? "flex-end" : "flex-start";
+        return(
+            <div className="arrow">
+                <img src={arrow} alt="arrow" style={{
+                    transform:"rotateZ(X)".replace("X",this.props.orientation),
+                    order:arrowOrder
+                    }}
+                />
+                <span style={{alignSelf:captionJustification,order:captionOrder}}>{this.props.text}</span>
+            </div>
+        )
+    }
+}
+
 export{
+    Arrow,
     Menu,
     MenuList
 }

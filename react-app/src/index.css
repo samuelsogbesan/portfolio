@@ -56,7 +56,7 @@ body {
   
   background-size: 400% 400%;
   animation: fadein 500ms ease;
-  animation: backgroundAnim 30s ease-in-out infinite;
+  animation: backgroundAnim 60s ease-in-out infinite;
   /*background-color:#E8F1F2;*/
   color:black;
 }

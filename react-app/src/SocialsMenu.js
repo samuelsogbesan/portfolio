@@ -1,4 +1,4 @@
-import {MenuList} from "./MainMenu";
+import {Arrow,MenuList} from "./MainMenu";
 import React from "react";
 import email from "./Resources/Images/email.svg";
 import linkedin from "./Resources/Images/social-network-icons/svg/linkedin.svg";
@@ -13,7 +13,11 @@ export default class SocialsMenu extends React.Component{
             {index:2,alt:"GitHub",src:github,href:"/github"}
         ]
         return(
-            MenuList({className:"menu-list socials-menu", options:options})
+            <nav>
+                {MenuList({className:"menu-list socials-menu", options:options})}
+                <Arrow text="contact" orientation="180deg" lead="arrow"/>
+            </nav>
+            
         )
 }
 }

@@ -19,12 +19,15 @@ class GridElement extends React.Component {
         this.state = { inFocus: false }
     }
     render() {
-        var className = "grid-element " + this.props.type
+        var className = "grid-element " + this.props.type;
+        var containerClassName = "grid-element-container";
         var animationDelay = 500 * this.props.index * 4
         var text;
         if (this.state.inFocus === false) {
+            containerClassName = "grid-element-container touch";
             text = <div className="info-container"><div className="name">{this.props.name}</div></div>
         } else {
+            containerClassName = "grid-element-container";
             text = <div className="info-container">
                 <div className="name">{this.props.name}</div>
                 <div className="description">{this.props.description}</div>
@@ -39,7 +42,7 @@ class GridElement extends React.Component {
             </div>
         }
         return (
-            <div className="grid-element-container">
+            <div className={containerClassName}>
                 <div
                     className={className}
                     style={{
@@ -49,7 +52,7 @@ class GridElement extends React.Component {
                     }}
                     onClick={() => this.props.onClick.call(this, this.props.index)}
                     onMouseEnter={() => this.setState({ inFocus: true })}
-                    onMouseLeave={() => this.setState({ inFocus: false })}
+                    onMouseLeave={() => this.setState({ inFocus: false })}                
                 >
                     {text}
                 </div>
@@ -106,7 +109,7 @@ export default class Projects extends BaseComponent {
         .catch(function(res){console.log(res)})
     }
 
-    setProject(index) {
+    setProject(index) {        
         this.setState({ activeProjectIndex: index })
     }
 
@@ -121,7 +124,7 @@ export default class Projects extends BaseComponent {
 
         for (var i = 0; i < this.state.projects.length; i++) projects.push(<GridElement {...this.state.projects[i]} key={i} index={i} onClick={this.setProject} />)
         return (
-            <div style={{ animation: "fadein 500ms ease", flex: "0.7", display: "flex", alignItems: "center",justifyContent:"center" }}>
+            <div style={{animation: "fadein 500ms ease", flex: "0.7", display: "flex", alignItems: "center",justifyContent:"center" }}>
                 <Control icon="<" onClick={this.scroll.bind(this,-1)} />
                 <div className="grid-container" id="grid-container">
                     {projects}           
