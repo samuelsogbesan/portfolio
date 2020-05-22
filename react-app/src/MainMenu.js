@@ -51,13 +51,6 @@ const MenuList = (props) => <ul className={props.className}> {props.options.map(
 export default class Menu extends React.Component {
     constructor(props){
         super(props);
-        this.state={inFocus:false}
-        this.animate = this.animate.bind(this);
-    }
-
-    animate(){
-        this.setState({inFocus:true})
-        //setTimeout(()=>this.setState({inFocus:false}),1);
     }
     render() {
         var className = "menu" + (this.props.animate===true?" sliding":"");

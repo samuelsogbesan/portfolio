@@ -19,42 +19,41 @@ class GridElement extends React.Component {
         this.state = { inFocus: false }
     }
     render() {
-        var className = "grid-element " + this.props.type;
+        var className = "grid-element";
         var containerClassName = "grid-element-container";
         var animationDelay = 500 * this.props.index * 4
-        var text;
+        var content;
         if (this.state.inFocus === false) {
             containerClassName = "grid-element-container touch";
-            text = <div className="info-container"><div className="name">{this.props.name}</div></div>
+            content = <div className="info-container"><div className="name">{this.props.name}</div></div>
         } else {
             containerClassName = "grid-element-container";
-            text = <div className="info-container">
+            content = 
+            <div className="info-container">
                 <div className="name">{this.props.name}</div>
                 <div className="description">{this.props.description}</div>
                 <a href={this.props.url} >
-                <img
-                    src={github}
-                    className="giticon"
-                    alt="Visit GitHub"
-                />
+                    <img src={github} className="giticon" alt="Visit GitHub"/>
                 </a>
-
             </div>
         }
+
+
         return (
-            <div className={containerClassName}>
+            <div className={containerClassName}
+                onClick={() => this.props.onClick.call(this, this.props.index)}
+                onMouseEnter={() => this.setState({ inFocus: true })}
+                onMouseLeave={() => this.setState({ inFocus: false })}      
+            >
                 <div
                     className={className}
                     style={{
                         animation: "fadein Xms ease".replace("X", animationDelay),
                         backgroundImage: "url(X)".replace("X", ''),
                         backgroundColor: this.props.colour                        
-                    }}
-                    onClick={() => this.props.onClick.call(this, this.props.index)}
-                    onMouseEnter={() => this.setState({ inFocus: true })}
-                    onMouseLeave={() => this.setState({ inFocus: false })}                
+                    }}          
                 >
-                    {text}
+                    {content}
                 </div>
             </div>
         )

@@ -74,7 +74,7 @@
 }
 
 .grid-element-container:hover .info-container{
-    color:white;
+    /*color:white;*/
 }
 
 .grid-element-prompt{
@@ -94,7 +94,7 @@
 
 .info-container{
     transition: inherit;
-    color:transparent;
+    color:white;
 }
 
 .info-container .name{
@@ -141,15 +141,8 @@
         transform: rotate3d(0,1,0,1deg);
     }
     .grid-container{
-        /*--size:15rem;*/
         color:black;
-        /*
-        display: grid;
-        gap:1rem;
-        grid-template-columns: repeat(auto-fit,minmax(var(--size),100vw));   
-        */
         --size:15rem;
         width: var(---size);
-        /*width: calc(var(--size)-1em);*/
     }
 }
