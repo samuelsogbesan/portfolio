@@ -3,16 +3,9 @@ import "./projects.css";
 import  { Control } from "./ProjectView";
 import "./base.css";
 import BaseComponent from "./BaseComponent";
-//import $ from "jquery";
-//import rotate from "./Resources/Images/rotate.svg";
 import github from "./Resources/Images/social-network-icons/svg/github.svg";
-//import api from "../../backend/api"
 import LoadingIndicator from "./LoadingIndicator";
 import fetch from "node-fetch";
-//var express = require("express");
-//var jq = require("jquery");
-//var fetch = require("node-fetch");
-//var router = express.Router()
 class GridElement extends React.Component {
     constructor(props) {
         super(props);
@@ -21,8 +14,9 @@ class GridElement extends React.Component {
     render() {
         var className = "grid-element";
         var containerClassName = "grid-element-container";
-        var animationDelay = 500 * this.props.index * 4
+        var animationDelay = 500 * this.props.index * 4;
         var content;
+
         if (this.state.inFocus === false) {
             containerClassName = "grid-element-container touch";
             content = <div className="info-container"><div className="name">{this.props.name}</div></div>
@@ -37,7 +31,6 @@ class GridElement extends React.Component {
                 </a>
             </div>
         }
-
 
         return (
             <div className={containerClassName}
@@ -64,10 +57,10 @@ class GridElement extends React.Component {
  * Returns an array of unforked project objects
  * @param {*} json An array of projects
  */
-const reduce = (json) => json.filter((value)=>value.fork!==true).map((value)=> { 
-    var {name,description,url,created_at}=value;
+const reduce = (json) => json.filter(value=>value.fork!==true).map(value=> { 
+    var {name,description,html_url,created_at}=value;
     var object = {name,description};
-    object.link = url;
+    object.link = html_url;
     object.startDate = created_at;
     return object;
 });
@@ -85,16 +78,18 @@ export default class Projects extends BaseComponent {
         //this.props.setAnimate(true);
     }
 
+    //Generate a random index i such that 0 <= i < arr.length
     rand(arr){
         return Math.round(Math.random() * (arr.length - 1))
     }
 
     componentDidMount() {
+        //Fetch relevant Github repos
         fetch("https://api.github.com/users/samuelsogbesan/repos")
-        .then(function(response){return response.json()})
-        .then(function(json){return reduce(json)})
+        .then(response => response.json())
+        .then(json=>reduce(json))
         .then(json=>{
-            //set the colours dynamically..
+            //set the colours dynamically and save the project information to state
             var colours = ["#b143e0","#441151","#613dc1","#6247aa","#858ae3","95f9e3","#69ebd0","#49d49d","#558564"];
             for (var i = 0; i < json.length; i++) json[i].colour = colours.splice(this.rand, 1)[0]
             this.setState({projects:json})            
@@ -105,10 +100,12 @@ export default class Projects extends BaseComponent {
                 document.getElementById("grid-container").scrollTo(0,0); //reset scroll on grid-container
                 this.props.setAnimate(false);
             }, 450))        
-        .catch(function(res){console.log(res)})
+        .catch(err=>console.log(err))
     }
 
+    
     setProject(index) {        
+        window.open(this.state.projects[index].link,"_blank");
         this.setState({ activeProjectIndex: index })
     }
 
